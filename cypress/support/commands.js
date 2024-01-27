@@ -6,12 +6,34 @@
 // For more comprehensive examples of custom
 // commands please read more here:
 // https://on.cypress.io/custom-commands
+
+
 // ***********************************************
-//
-//
+import MP3PlayerPage from "../support/PageObjects/MP3PlayerPage.js";
+
+const MP3Page = new MP3PlayerPage();
+
+require('@4tw/cypress-drag-drop');
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
+Cypress.Commands.add('addProductToCart', (productToBeAddedToCart) => 
+{
+        MP3Page.elements.lnkHeaderLinks().each(($el,index,$list) =>{
+        let productName = $el.text();
+        cy.log(productName);
+        if(productName === productToBeAddedToCart)
+        {
+            MP3Page.elements.btnAddToCart().eq(index).click({force:true});
+            return;
+        }
+    })
+
+    //Validate the success message once product is added to cart
+    MP3Page.elements.alrtSuccessMsg().then((popmsg)=>{
+        cy.log(popmsg.text());
+        expect(popmsg.text()).to.include("Success: You have added");
+    })
+})
+    
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
