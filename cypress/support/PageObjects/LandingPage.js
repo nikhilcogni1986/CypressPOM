@@ -16,7 +16,7 @@ class LandingPage
         this.elements.lnkHeaderLinks().contains(prodSubLink).click();
     }   
 
-    verifyProductInCart()
+    verifyProductInCart(productName)
     {
         //verify the product name
         this.elements.prodNameInCart().then((productInCart)=>

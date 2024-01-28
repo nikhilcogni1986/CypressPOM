@@ -10,10 +10,8 @@
 
 // ***********************************************
 import MP3PlayerPage from "../support/PageObjects/MP3PlayerPage.js";
-
 const MP3Page = new MP3PlayerPage();
 
-require('@4tw/cypress-drag-drop');
 // -- This is a parent command --
 Cypress.Commands.add('addProductToCart', (productToBeAddedToCart) => 
 {
