@@ -1,15 +1,26 @@
 {
   "name": "cypresspomframework",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cypress test automation in page object model design pattern",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run",
+    "ChromeHeadedTest":"npm run test -- --browser chrome",
+    "FirefoxHeadlessTest":"npm run test -- --browser firefox",
+    "EdgeHeadless": "npm run test -- --browser edge",
+    "ElectronHeaded": "npm run test -- --browser electron --headed"
   },
   "author": "Nikhil Prahalad Rao",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.6.3",
     "npx": "^10.2.2"
-  }
+  },
+  "keywords": [
+    "cypress",
+    "pom",
+    "ui-automation",
+    "test-automation",
+    "framework"
+  ]
 }

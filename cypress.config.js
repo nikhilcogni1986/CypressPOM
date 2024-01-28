@@ -11,6 +11,10 @@ module.exports = defineConfig({
     },
     defaultCommandTimeout:8000,
     specPattern: 'cypress/e2e/Tests/*.js',
-    pageLoadTimeout: 60000
+    pageLoadTimeout: 60000,
+    retries:{
+      openMode:1,
+      "runMode":1
+    }
   },
 });
