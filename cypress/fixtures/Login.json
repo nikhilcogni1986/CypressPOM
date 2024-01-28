@@ -1,0 +1,10 @@
+[
+  {
+    "username": "nikhilrao@test.com",
+    "password": "Password1234"
+  },
+  {
+    "InvalidUsername": "nikhilrao@test.com",
+    "InvalidPassword": "Password12345"
+  }
+]
