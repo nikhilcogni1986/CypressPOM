@@ -118,6 +118,11 @@ commands to scripts
     "ElectronHeaded": "npm run test -- --browser electron --headed"
 
   }
+## How to open report
+- serve report based on current "allure-results" folder: allure serve
+- generate new report based on current "allure-results" folder: allure generate
+- open generated report from "allure-report" folder: allure open
+
 ## Supports
 
 Multiple browser automation   
@@ -125,6 +130,8 @@ Jenkins Integration
 Headless run
 Testdata driven tests  
 Retries of failed tests
+Allure Reporting
+
 ## Contributing
 
 - Clone the repo!

@@ -4,11 +4,16 @@
   "description": "Cypress test automation in page object model design pattern",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run",
-    "ChromeHeadedTest":"npm run test -- --browser chrome",
-    "FirefoxHeadlessTest":"npm run test -- --browser firefox",
-    "EdgeHeadless": "npm run test -- --browser edge",
-    "ElectronHeaded": "npm run test -- --browser electron --headed"
+    
+    "cy:run": "cypress run — env allure=true",
+    "ChromeHeadedTest": "npm run test -- --browser chrome --env allure=true",
+    "FirefoxHeadlessTest": "npm run test -- --browser firefox --env allure=true",
+    "EdgeHeadless": "npm run test -- --browser edge --env allure=true",
+    "ElectronHeaded": "npm run test -- --browser electron --headed --env allure=true",
+    "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
+    "posttest":"npm run allure:report",
+    "Fulltest":"npm run test || npm run postest"
   },
   "author": "Nikhil Prahalad Rao",
   "license": "ISC",
@@ -22,5 +27,8 @@
     "ui-automation",
     "test-automation",
     "framework"
-  ]
+  ],
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.1"
+  }
 }
